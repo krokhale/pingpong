@@ -10,6 +10,10 @@ class PlayersController < ApplicationController
     end
   end
 
+  def scorecard
+
+  end
+
   # GET /players/1
   # GET /players/1.json
   def show

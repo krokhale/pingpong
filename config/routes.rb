@@ -1,6 +1,7 @@
 Pingpong::Application.routes.draw do
-  resources :players
-
+  resources :players do
+      get :scorecard
+      end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -50,7 +51,7 @@ Pingpong::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'players#index'
 
   # See how all your routes lay out with "rake routes"
 
