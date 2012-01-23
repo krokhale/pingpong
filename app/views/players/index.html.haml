@@ -1,10 +1,11 @@
-%h1 Listing players
+%h1 Champs List
+
 
 %table
   %tr
     %th Name
     %th Points
-    %th
+    %th Rank
     %th
     %th
 
@@ -12,10 +13,11 @@
     %tr
       %td= player.name
       %td= player.points
-      %td= link_to 'Show', player
-      %td= link_to 'Edit', edit_player_path(player)
-      %td= link_to 'Destroy', player, :confirm => 'Are you sure?', :method => :delete
+      %td= player.rank
+      -#%td= link_to 'Show', player
+      -#%td= link_to 'Edit', edit_player_path(player)
+      -#%td= link_to 'Destroy', player, :confirm => 'Are you sure?', :method => :delete
 
-%br
+-#%br
 
-= link_to 'New Player', new_player_path
+-#= link_to 'New Player', new_player_path
