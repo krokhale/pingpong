@@ -3,10 +3,8 @@
 %p
   %b Name:
   = @player.name
-%p
-  %b Points:
-  = @player.points
 
-= link_to 'Edit', edit_player_path(@player)
-\|
-= link_to 'Back', players_path
+-#= link_to 'Edit', edit_player_path(@player)
+
+-#= link_to 'Back', players_path
+= link_to 'continue', player_scorecard_path(1)

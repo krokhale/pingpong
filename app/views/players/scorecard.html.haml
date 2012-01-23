@@ -1,10 +1,46 @@
 Startupter scorekeeper
 = image_tag "logo.png", :size => "75x75", :id => "logo"
 
-%fieldset
-  = form_tag do
-    Player 1:
-    = text_field :player_one, :value => "Player 1", :label => "Player 1"
-    %br
-    Player 2:
-    = text_field :player_two, :value => "Player 2", :label => "Player 2"
+%fieldset#form
+  Player 1:
+  = text_field_tag :player_one
+  %br
+  Player 2:
+  = text_field_tag :player_two
+  %br
+  = link_to "Start Match", "#", :id => "start"
+  %br
+    = link_to "SignUp",  new_player_path
+
+%fieldset#form_last
+  Who One?
+  %p#player_two_name
+  = radio_button_tag :player, :two
+  %p#player_one_name
+  = radio_button_tag :player, :one
+  %br
+  = link_to "submit" , "#", :id => "finish"
+
+:javascript
+    $("#form_last").hide();
+    $("#start").click(function() {
+       $("#form").hide();
+       $("#player_one_name").text($("#player_one").val());
+       $("#player_two_name").text($("#player_two").val());
+       $("#form_last").show();
+    });
+
+    $("#finish").click(function() {
+    var first_name = $("#player_one_name").text();
+    var second_name = $("#player_two_name").text();
+    var winner = $('input:radio[name=player]:checked').val();
+    $.ajax({
+      url: "/players/eval",
+      type: "POST",
+      data: {player_one_name: first_name  , player_two_name: second_name , winner: winner},
+      success: function(data) {
+
+      }
+
+    })
+    });

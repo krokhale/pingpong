@@ -1,7 +1,9 @@
 Pingpong::Application.routes.draw do
   resources :players do
-      get :scorecard
-      end
+    get :scorecard
+    post :eval, :on => :collection
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

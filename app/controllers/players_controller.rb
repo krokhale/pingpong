@@ -14,6 +14,13 @@ class PlayersController < ApplicationController
 
   end
 
+  def eval
+    puts "****************************************"
+    puts params
+    puts params[:winner]
+
+  end
+
   # GET /players/1
   # GET /players/1.json
   def show
