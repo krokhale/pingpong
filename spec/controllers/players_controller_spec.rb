@@ -13,4 +13,9 @@ describe PlayersController do
 
   end
 
+  it "should do a POST to players/eval" do
+    post :eval
+  end
+
+
 end

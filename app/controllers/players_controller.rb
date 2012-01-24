@@ -19,6 +19,7 @@ class PlayersController < ApplicationController
     puts params
     puts params[:winner]
 
+
   end
 
   # GET /players/1
