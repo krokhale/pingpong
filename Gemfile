@@ -48,6 +48,7 @@ group :development, :test do
   gem 'vcr'
   gem 'webmock'
   gem 'timecop'
+  gem "paperclip", "2.3.11"
 end
 
 group :test do

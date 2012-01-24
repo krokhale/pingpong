@@ -1,4 +1,5 @@
 class Player < ActiveRecord::Base
+  has_attached_file :player_image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 
   def self.scoring_algorithm(player_one_name, player_two_name, winner)
     #player  = Player.find_by_name()

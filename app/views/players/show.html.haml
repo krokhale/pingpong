@@ -3,6 +3,9 @@
 %p
   %b Name:
   = @player.name
+%p
+  %b Picture:
+  = image_tag @player.player_image.url
 
 -#= link_to 'Edit', edit_player_path(@player)
 
