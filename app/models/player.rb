@@ -16,14 +16,12 @@ class Player < ActiveRecord::Base
       else
         player2.update_attribute(:points, 5)
       end
-    elsif
-      player1.points > player2.points
+    elsif player1.points > player2.points
       player1.points = player1.points - player2.points
       #player2.points = 0
       player2.update_attribute(:points, 0)
 
-    elsif
-      player1.points < player2.points
+    elsif player1.points < player2.points
       player2.points = player2.points - player1.points
       player1.update_attribute(:points, 0)
     else
