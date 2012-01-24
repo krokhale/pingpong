@@ -9,6 +9,8 @@ gem 'pg'
 gem 'sqlite3'
 gem 'haml'
 gem "haml-rails"
+gem "paperclip", "2.3.11"
+
 
 
 
@@ -48,7 +50,6 @@ group :development, :test do
   gem 'vcr'
   gem 'webmock'
   gem 'timecop'
-  gem "paperclip", "2.3.11"
 end
 
 group :test do
