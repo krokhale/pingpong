@@ -13,11 +13,11 @@ Startupter scorekeeper
     = link_to "SignUp",  new_player_path
 
 %fieldset#form_last
-  Who One?
-  %p#player_two_name
-  = radio_button_tag :player, :two
+  Who won?
   %p#player_one_name
   = radio_button_tag :player, :one
+  %p#player_two_name
+  = radio_button_tag :player, :two
   %br
   = link_to "submit" , "#", :id => "finish"
 
@@ -39,8 +39,10 @@ Startupter scorekeeper
       type: "POST",
       data: {player_one_name: first_name  , player_two_name: second_name , winner: winner},
       success: function(data) {
-
       }
 
     })
     });
+
+
+
